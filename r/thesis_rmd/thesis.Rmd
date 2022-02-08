@@ -1,0 +1,15 @@
+---
+title: "thesis"
+author: "Shriram"
+date: "2/8/2022"
+output: html_document
+---
+
+
+```{python}
+print('Hello world')
+```
+```{r}
+library(tidyverse)
+library(reticulate)
+```
