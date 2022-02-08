@@ -6,10 +6,21 @@ output: html_document
 ---
 
 
-```{python}
-print('Hello world')
-```
+
 ```{r}
 library(tidyverse)
 library(reticulate)
 ```
+
+Box plots of c.b telomere lengths: 
+
+```{r}
+cb_len <- as_tibble(read_tsv('/Users/shrirambhat/Desktop/data/briggsae_QX1410_telomere_length.tsv'))
+cb_len <- cb_len %>% arrange(desc(length))
+```
+```{r}
+p <- ggplot(data=cb_len,aes(x=isotype,y=length)) +
+    geom_bar(stat='identity')
+p
+```
+
