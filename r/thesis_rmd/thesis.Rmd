@@ -49,3 +49,13 @@ p <- ct_len %>% mutate(strain=fct_reorder(strain,length)) %>%
         geom_bar(stat='identity',fill="#f68060")
 p
 ```
+
+
+cbr mrt1 variations
+
+
+
+```{r}
+cb_mrt_vcf <- read_tsv('cbrmrt1_variation.tsv')
+```
+
