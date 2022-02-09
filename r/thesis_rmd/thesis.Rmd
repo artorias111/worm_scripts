@@ -14,38 +14,38 @@ library(tidyverse)
 Box plots of c.e. telomere lengths:
 
 ```{r}
-ce_len <- as_tibble(read_tsv('/Users/shrirambhat/Desktop/rmd_data/eleg_strain.tsv'))
+ce_len <- read_tsv('eleg_strain.tsv')
 ce_len <- ce_len %>% arrange(desc(length))
 
-pe <- ce_len %>% mutate(strain=fct_reorder(strain,desc(length))) %>%
+pe <- ce_len %>% mutate(strain=fct_reorder(strain,length)) %>%
       ggplot(aes(x=strain,y=length)) + 
-        xlab("")+ 
-        geom_bar(stat='identity',fill="#f68060", alpha=.6, width=.4)
+        xlab("elegans strains")+ 
+        geom_bar(stat='identity',fill="#f68060")
 pe
 ```
 
 Box plots of c.b telomere lengths: 
 
 ```{r}
-cb_len <- as_tibble(read_tsv('/Users/shrirambhat/Desktop/rmd_data/brig_strain.tsv'))
+cb_len <- as_tibble(read_tsv('brig_strain.tsv'))
 cb_len <- cb_len %>% arrange(desc(length))
 
-pb <- cb_len %>% mutate(strain=fct_reorder(strain,desc(length))) %>%
+pb <- cb_len %>% mutate(strain=fct_reorder(strain,length)) %>%
       ggplot(aes(x=strain,y=length)) + 
-        xlab("")+ 
-        geom_bar(stat='identity',fill="#f68060", alpha=.6, width=.4)
+        xlab("briggsae strains")+ 
+        geom_bar(stat='identity',fill="#f68060")
 pb
 ```
 
 Box plots of c.t telomere lengths: 
 
 ```{r}
-ct_len <- as_tibble(read_tsv('/Users/shrirambhat/Desktop/rmd_data/trop_strain.tsv'))
+ct_len <- as_tibble(read_tsv('trop_strain.tsv'))
 ct_len <- ct_len %>% arrange(desc(length))
 
-p <- ct_len %>% mutate(strain=fct_reorder(strain,desc(length))) %>%
+p <- ct_len %>% mutate(strain=fct_reorder(strain,length)) %>%
       ggplot(aes(x=strain,y=length)) + 
-        xlab("")+ 
-        geom_bar(stat='identity',fill="#f68060", alpha=.6, width=.4)
+        xlab("tropicalis strains")+ 
+        geom_bar(stat='identity',fill="#f68060")
 p
 ```
